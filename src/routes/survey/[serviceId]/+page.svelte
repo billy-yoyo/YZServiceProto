@@ -1,0 +1,17 @@
+<script lang="ts">
+    import { onMount } from "svelte";
+    import { ensure_consent } from "$lib/consent";
+    import type { Service } from "$lib/service";
+    import Survey from "../../../components/survey/Survey.svelte";
+    import { getService } from "$lib/data";
+
+    export let data;
+    let service: Service | undefined = getService(parseInt(data.serviceId));
+    $: service = getService(parseInt(data.serviceId));
+
+    onMount(ensure_consent);
+</script>
+
+{#if service}
+    <Survey survey={service.survey} surveyId={data.serviceId}/>
+{/if}
