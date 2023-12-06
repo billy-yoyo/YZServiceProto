@@ -1,11 +1,11 @@
 <script>
     import { onMount } from "svelte";
-    import { ensure_consent } from "$lib/consent";
+    import { ensureConsent } from "$lib/consent";
     import Button from "../../components/Button.svelte";
     import CenteredBody from "../../components/CenteredBody.svelte";
     import ScrollableInfo from "../../components/ScrollableInfo.svelte";
   
-    onMount(ensure_consent);
+    onMount(ensureConsent);
 
 
   </script>
