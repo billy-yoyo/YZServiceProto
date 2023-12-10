@@ -22,7 +22,7 @@ const config = {
 			strict: true,
 		}),
 		paths: {
-			base: "/YZServiceProto"
+			base: process.env.NODE_ENV === "production" ? "/YZServiceProto" : "", 
 		},
 		prerender: {
 			entries: SERVICE_IDS.map(sid => [
