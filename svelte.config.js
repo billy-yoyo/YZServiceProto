@@ -1,6 +1,9 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
+const APP_ROUTE = "yzproto";
+const SERVICE_IDS = [1, 2, 3];
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
@@ -16,8 +19,20 @@ const config = {
 			assets: 'build',
 			fallback: undefined,
 			precompress: false,
-			strict: true
-		})
+			strict: true,
+		}),
+		prerender: {
+			entries: SERVICE_IDS.map(sid => [
+				`/${APP_ROUTE}/survey/${sid}`,
+				`/${APP_ROUTE}/service/${sid}`,
+			]).flat().concat([
+				"/",
+				`/${APP_ROUTE}`,
+				`/${APP_ROUTE}/home`,
+				`/${APP_ROUTE}/consent-form`,
+				`/${APP_ROUTE}/info`,
+			])
+		}
 	}
 };
 

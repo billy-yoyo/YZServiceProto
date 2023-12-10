@@ -1,3 +1,4 @@
+import { goto } from "./config";
 
 const CONSENT_KEY = 'consent';
 
@@ -9,7 +10,7 @@ export interface Consent {
 export const ensureConsent = (): void => {
     const consent = getConsent()
     if (!consent) {
-        window.location.pathname = '/consent-form'
+        goto('/consent-form');
     }
 };
 

@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { ensureConsent } from "$lib/consent";
-    import CenteredBody from "../../../components/CenteredBody.svelte";
+    import CenteredBody from "$lib/components/CenteredBody.svelte";
 
     export let data;
 

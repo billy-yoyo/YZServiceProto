@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import Button from "./Button.svelte";
   import ScrollableInfo from "./ScrollableInfo.svelte";
+    import { goto } from "$lib/config";
 
     export let title: string;
     export let service_id: number;
@@ -16,7 +17,7 @@
         if (state === 'not_started') {
             localStorage.setItem(`survey:${service_id}:state`, 'in_progress');
         }
-        window.location.pathname = `/service/${service_id}`
+        goto(`/service/${service_id}`);
     }
 </script>
 

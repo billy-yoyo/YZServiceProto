@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { goto } from "$lib/config";
     import type { Survey } from "$lib/service";
     import Button from "../Button.svelte";
     import CenteredBody from "../CenteredBody.svelte";
@@ -16,9 +17,9 @@
     };
 
     const submit = () => {
-        if (answers.every(x => x)) {
+        if (answers.every(x => x !== undefined)) {
             localStorage.setItem(`survey:${surveyId}:state`, 'done');
-            window.location.pathname = '/home';
+            goto('/home');
         }
     }
 </script>
@@ -29,7 +30,7 @@
     {/each}
 
     <div class="buttons">
-        <Button label="Submit" disabled={!answers.every(x => x)} on:click={submit}/>
+        <Button label="Submit" disabled={!answers.every(x => x !== undefined)} on:click={submit}/>
     </div>
 </CenteredBody>
 

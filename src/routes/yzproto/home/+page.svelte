@@ -1,8 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { ensureConsent } from "$lib/consent";
-  import CenteredBody from "../../components/CenteredBody.svelte";
-  import ServiceLink from "../../components/ServiceLink.svelte";
+  import CenteredBody from "$lib/components/CenteredBody.svelte";
+  import ServiceLink from "$lib/components/ServiceLink.svelte";
   import { services } from '$lib/data';
 
   onMount(ensureConsent);

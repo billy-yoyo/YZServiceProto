@@ -1,9 +1,10 @@
 <script>
     import { onMount } from "svelte";
     import { ensureConsent } from "$lib/consent";
-    import Button from "../../components/Button.svelte";
-    import CenteredBody from "../../components/CenteredBody.svelte";
-    import ScrollableInfo from "../../components/ScrollableInfo.svelte";
+    import Button from "$lib/components/Button.svelte";
+    import CenteredBody from "$lib/components/CenteredBody.svelte";
+    import ScrollableInfo from "$lib/components/ScrollableInfo.svelte";
+    import { goto } from "$lib/config";
   
     onMount(ensureConsent);
 
@@ -38,7 +39,7 @@
       </ScrollableInfo>
   
       <div class="buttons">
-          <Button label="OK" on:click={() => window.location.pathname = '/home'}/>
+          <Button label="OK" on:click={() => goto('/home')}/>
       </div>
   </CenteredBody>
   

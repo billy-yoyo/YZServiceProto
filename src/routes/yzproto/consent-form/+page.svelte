@@ -1,20 +1,21 @@
 <script lang="ts">
     import { getConsent, giveConsent } from "$lib/consent";
     import { onMount } from "svelte";
-    import Button from "../../components/Button.svelte";
-    import CenteredBody from "../../components/CenteredBody.svelte";
-    import ScrollableInfo from "../../components/ScrollableInfo.svelte";
+    import Button from "$lib/components/Button.svelte";
+    import CenteredBody from "$lib/components/CenteredBody.svelte";
+    import ScrollableInfo from "$lib/components/ScrollableInfo.svelte";
+    import { goto } from "$lib/config";
 
     onMount(() => {
         const consent = getConsent();
         if (consent) {
-            window.location.pathname = '/info';
+            goto('/info');
         }
     });
 
     const agree = () => {
         giveConsent();
-        window.location.pathname = '/info';
+        goto('/info');
     };
 </script>
 
