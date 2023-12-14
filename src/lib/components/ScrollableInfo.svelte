@@ -10,6 +10,8 @@
         max-height: 80vh;
         display: flex;
         flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .header {
@@ -18,6 +20,8 @@
         border-top-right-radius: 4px;
         padding: 1px 20px;
         color: white;
+        display: flex;
+        justify-content: center;
     }
 
     .scrollable-info {

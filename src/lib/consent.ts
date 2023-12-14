@@ -4,13 +4,15 @@ const CONSENT_KEY = 'consent';
 
 export interface Consent {
     time: string,
-    id: string
+    id: string,
+    name: string,
+    email: string
 }
 
 export const ensureConsent = (): void => {
     const consent = getConsent()
     if (!consent) {
-        goto('/consent-form');
+        goto('/info');
     }
 };
 
@@ -21,10 +23,12 @@ export const getConsent = (): Consent | undefined => {
     }
 };
 
-export const giveConsent = () => {
+export const giveConsent = (name: string, email: string) => {
     const consent: Consent = {
         time: new Date().toISOString(),
-        id: crypto.randomUUID()
+        id: crypto.randomUUID(),
+        name,
+        email
     };
     localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
 };

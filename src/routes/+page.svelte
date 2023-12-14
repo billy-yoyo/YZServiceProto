@@ -2,5 +2,5 @@
   import { goto } from "$lib/config";
   import { onMount } from "svelte";
 
-  onMount(() => goto("/consent-form"));
+  onMount(() => goto("/info"));
 </script>

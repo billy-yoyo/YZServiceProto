@@ -4,6 +4,7 @@
     import Button from "../Button.svelte";
     import CenteredBody from "../CenteredBody.svelte";
     import Question from "./Question.svelte";
+    import { translation as t } from "$lib/translate/translate";
 
     export let survey: Survey;
     export let surveyId: string;
@@ -30,7 +31,7 @@
     {/each}
 
     <div class="buttons">
-        <Button label="Submit" disabled={!answers.every(x => x !== undefined)} on:click={submit}/>
+        <Button label={$t.buttons.submit} disabled={!answers.every(x => x !== undefined)} on:click={submit}/>
     </div>
 </CenteredBody>
 

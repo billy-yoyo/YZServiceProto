@@ -1,5 +1,5 @@
 import { getConsent } from "./consent";
-import { services } from "./data";
+import { TRANSLATIONS } from "./translate/data";
 
 const DATA_VERSION = 1;
 
@@ -20,7 +20,7 @@ export const submit = () => {
         return false;
     }
 
-    const serviceData = Object.fromEntries(services.map(service => 
+    const serviceData = Object.fromEntries(TRANSLATIONS.cn.services.map(service => 
         [service.id, service.survey.questions.map((question, index) =>
             localStorage.getItem(`survey:${service.id}:question:${index}`)
         )]
@@ -29,7 +29,9 @@ export const submit = () => {
     const data = {
       serviceData,
       dataVersion: DATA_VERSION,
-      consentTime: consent.time
+      consentTime: consent.time,
+      name: consent.name,
+      email: consent.email
     };
 
     submitToDb(consent.id, data);

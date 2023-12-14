@@ -1,26 +1,26 @@
 
 export interface QuestionRange {
-    type: 'range';
-    options: string[];
+    readonly type: 'range';
+    readonly options: readonly string[];
 }
 
 export interface QuestionFreeText {
-    type: 'free-text';
+    readonly type: 'free-text';
 }
 
 export interface Question {
-    title: string;
-    body: QuestionRange | QuestionFreeText;
+    readonly title: string;
+    readonly body: QuestionRange | QuestionFreeText;
 }
 
 export interface Survey {
-    title: string;
-    questions: Question[];
+    readonly title: string;
+    readonly questions: readonly Question[];
 }
 
 export interface Service {
-    id: number,
-    title: string,
-    body: string[],
-    survey: Survey
+    readonly id: number,
+    readonly title: string,
+    readonly body: string[],
+    readonly survey: Survey
 }
