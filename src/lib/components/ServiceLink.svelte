@@ -18,7 +18,7 @@
         if (state === 'not_started') {
             localStorage.setItem(`survey:${serviceId}:state`, 'in_progress');
         }
-        goto(`/service/${serviceId}`);
+        goto($t.services[serviceId].path);
     }
 </script>
 

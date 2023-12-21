@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { getConsent, giveConsent } from "$lib/consent";
+    import { ensureNoConsent, getConsent, giveConsent } from "$lib/consent";
     import { onMount, type ComponentEvents } from "svelte";
     import Button from "$lib/components/Button.svelte";
     import CenteredBody from "$lib/components/CenteredBody.svelte";
@@ -14,12 +14,7 @@
 
     $: canAgree = agreed.every(x => x) && email && name;
 
-    onMount(() => {
-        const consent = getConsent();
-        if (consent) {
-            //goto('/home');
-        }
-    });
+    onMount(ensureNoConsent);
 
     const setBoxAgreement = (index: number): ChangeEventHandler<HTMLInputElement> => (e) => {
         agreed[index] = e.currentTarget.checked;

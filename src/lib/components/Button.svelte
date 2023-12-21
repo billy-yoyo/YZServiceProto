@@ -1,6 +1,7 @@
 <script lang="ts">
     export let label: string;
     export let disabled: boolean = false;
+    export let full: boolean = false;
 </script>
 
 <style>
@@ -31,8 +32,15 @@
         box-shadow: none;
         cursor: unset;
     }
+
+    button.full {
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
 </style>
 
-<button disabled={disabled} on:click>
+<button class={full ? "full" : ""} disabled={disabled} on:click>
     {label}
 </button>

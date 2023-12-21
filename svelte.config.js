@@ -1,8 +1,13 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
-const APP_ROUTE = "";
-const SERVICE_IDS = [1, 2, 3];
+const SERVICE_IDS = [["information", 1], ["2", 2], ["3", 3]];
+const INFORMATION_SECTIONS = [
+	"preArrival",
+	"settleDown",
+	"onCampus",
+	"offCampus"
+];
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -25,15 +30,15 @@ const config = {
 			base: process.env.NODE_ENV === "production" ? "/YZServiceProto" : "", 
 		},
 		prerender: {
-			entries: SERVICE_IDS.map(sid => [
-				`/survey/${sid}`,
-				`/service/${sid}`,
+			entries: SERVICE_IDS.map(([path, id]) => [
+				`/survey/${id}`,
+				`/service/${path}`,
 			]).flat().concat([
 				"/",
 				`/home`,
 				`/consent-form`,
 				`/info`,
-			])
+			]).concat(INFORMATION_SECTIONS.map(section => `/service/information/${section}`))
 		}
 	}
 };

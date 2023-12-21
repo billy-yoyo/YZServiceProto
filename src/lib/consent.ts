@@ -16,6 +16,13 @@ export const ensureConsent = (): void => {
     }
 };
 
+export const ensureNoConsent = (): void => {
+    const consent = getConsent();
+    if (consent) {
+        goto("/home");
+    }
+}
+
 export const getConsent = (): Consent | undefined => {
     const consent = window.localStorage.getItem(CONSENT_KEY);
     if (consent) {

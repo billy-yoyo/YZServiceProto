@@ -55,7 +55,7 @@
 </p>
 
 <p>
-    If you are interested in taking part, please contact the researcher named above by the e-mail provided.
+    If you are interested in taking part, you can start the questionnaire after signing the consent form.
 </p>
 
 <p>
@@ -63,7 +63,7 @@
 </p>
 
 <p>
-    You can withdraw from the study at any time, without giving a reason. If you wish to withdraw from this study, please contact the researcher named above. Any data collated up to the point of withdrawal will be kept securely on a password-protected database and securely disposed of following the withdrawal request. Your data, including video, audio and E-dairy will be destroyed from a local computer, cloud storage and hard disk devices after you withdraw. 
+    You can withdraw from the study at any time, without giving a reason. If you wish to withdraw from this study, please contact the researcher named above. Any data collated up to the point of withdrawal will be kept securely on a password-protected database and securely disposed of following the withdrawal request. Your questionnaire data will be destroyed from a local computer, cloud storage and hard disk devices after you withdraw. 
 </p>
 
 <p>
@@ -71,7 +71,7 @@
 </p>
 
 <p>
-    While we hope that your experience will be pleasant, some interview questions may remind you of the unhappy intercultural adaptation experience and may make you feel uncomfortable. If at any point during the study you feel distressed you can choose to remove yourself and the session will end.
+    While we hope that your experience will be pleasant, but you may encounter some technical issues while completing the questionnaire. If this happens, please close the web app and try again. If at any point during the study you feel distressed you can choose to remove yourself and the session will end.
 </p>
 
 <p>
@@ -109,7 +109,7 @@
     Data will be managed by the researcher named above for the duration of the project.  Only the researcher and the supervisor team will have access to the data. The Faculty Head of Research Ethics may also require access to check that the study has been conducted in accordance with the approval. 
 </p>
 <p>
-    The Participant will be given an ID code that will be used instead of your name unless this is contrary to your wishes. Any identifiable information you may give will be removed and anonymised. Any published data released to a third party will be anonymised so that it cannot be traced back to the Participant.
+    Any identifiable information you may give will be removed and anonymised. Any published data released to a third party will be anonymised so that it cannot be traced back to the Participant.
 </p>
 
 <p>

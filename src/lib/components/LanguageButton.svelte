@@ -21,6 +21,7 @@
         font-size: 3rem;
         cursor: pointer;
         color: #22f;
+        z-index: 10;
     }
 
     @media only screen and (max-width: 600px) {

@@ -31,6 +31,7 @@
         background-color: white;
         padding: 12px 4px;
         font-weight: bold;
+        font-size: 0.75rem;
     }
 
     button:hover {
